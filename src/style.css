@@ -1,0 +1,130 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  background-color: #1e201e;
+  font-family: 'Inter', sans-serif;
+  color: #5ccc37;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+html body {
+  padding-top: 65px;
+  padding-bottom: 100px;
+}
+
+@font-face {
+  font-family: 'Neue Montreal Book';
+  src: url('./fonts/ppneuemontreal-book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Neue Montreal Italic';
+  src: url('./fonts/ppneuemontreal-italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Neue Montreal Semi Bold Italic';
+  src: url('./fonts/ppneuemontreal-semibolditalic.otf') format('opentype');
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: #1e201e;
+}
+
+button {
+  font-family: 'Neue Montreal Book';
+  font-size: 1.8rem;
+  color: #5ccc37;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 30px;
+}
+
+a {
+  text-decoration: none;
+  margin: 30px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #1e201e;
+  padding: 30px;
+}
+
+.home-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.restaurant {
+  font-family: 'Times New Roman';
+  font-style: italic;
+  font-size: 10rem;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+.address,
+.tag-line {
+  font-family: 'Neue Montreal Italic';
+  line-height: 2;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Neue Montreal Semi Bold Italic';
+  font-size: 2.5rem;
+  line-height: 3;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  columns: 2;
+  line-height: 1.5;
+  color: white;
+}
+
+p {
+  color: white;
+  margin: 0 40px 0 40px;
+}
+
+.contact,
+.contact-header {
+  text-align: left;
+  margin: 0 40px 0 40px;
+}
+
+.hours {
+  line-height: 1.5;
+}
