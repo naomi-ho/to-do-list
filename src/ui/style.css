@@ -13,19 +13,15 @@ html {
 body {
   box-sizing: border-box;
   font-size: 1.6rem;
-  background-color: #1e201e;
-  font-family: 'Inter', sans-serif;
+  background-color: #1e1e1e;
+  font-family: 'Neue Montreal Book', sans-serif;
   color: #5ccc37;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-html body {
-  padding-top: 65px;
-  padding-bottom: 100px;
+@font-face {
+  font-family: 'Neue Montreal Medium';
+  src: url('../fonts/ppneuemontreal-medium.otf') format('opentype');
 }
 
 @font-face {
@@ -34,97 +30,66 @@ html body {
 }
 
 @font-face {
-  font-family: 'Neue Montreal Italic';
-  src: url('../fonts/ppneuemontreal-italic.otf') format('opentype');
+  font-family: 'Neue Montreal Thin';
+  src: url('../fonts/ppneuemontreal-thin.otf') format('opentype');
 }
 
-@font-face {
-  font-family: 'Neue Montreal Semi Bold Italic';
-  src: url('../fonts/ppneuemontreal-semibolditalic.otf') format('opentype');
-}
-
-header {
-  display: flex;
-  justify-content: center;
+.sidebar {
+  margin: 0;
+  padding: 10px;
+  width: 260px;
+  background-color: #2d2d2d;
   position: fixed;
-  top: 0px;
-  width: 100%;
-  background-color: #1e201e;
+  height: 100%;
+  overflow: auto;
 }
 
-button {
-  font-family: 'Neue Montreal Book';
+.sidebar-top,
+.sidebar-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 10px;
+}
+
+.sidebar-top h1,
+.sidebar-2 h1 {
   font-size: 1.8rem;
-  color: #5ccc37;
-  background-color: transparent;
+  font-family: 'Neue Montreal Medium';
+}
+
+.sidebar button,
+.sidebar-top button {
+  background-color: #2d2d2d;
   border: none;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  margin: 30px;
 }
 
-a {
+.sidebar a {
+  display: flex;
+  align-items: center;
+  color: white;
   text-decoration: none;
-  margin: 30px;
+  padding: 10px;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  background-color: #1e201e;
-  padding: 30px;
+.sidebar a.active {
+  background-color: #235413;
+  color: #5ccc37;
 }
 
-.home-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.sidebar a:hover:not(.active) {
+  background-color: #3b3b3b;
 }
 
-.restaurant {
-  font-family: 'Times New Roman';
-  font-style: italic;
-  font-size: 10rem;
-  font-weight: 200;
-  line-height: 1.5;
+.sidebar a svg {
+  margin-right: 8px;
 }
 
-.address,
-.tag-line {
-  font-family: 'Neue Montreal Italic';
-  line-height: 2;
-  text-align: center;
-}
-
-h1 {
-  font-family: 'Neue Montreal Semi Bold Italic';
-  font-size: 2.5rem;
-  line-height: 3;
-  text-align: center;
-}
-
-ul {
-  list-style-type: none;
-  columns: 2;
-  line-height: 1.5;
-  color: white;
-}
-
-p {
-  color: white;
-  margin: 0 40px 0 40px;
-}
-
-.contact,
-.contact-header {
-  text-align: left;
-  margin: 0 40px 0 40px;
-}
-
-.hours {
-  line-height: 1.5;
+div > content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 100vh;
 }
