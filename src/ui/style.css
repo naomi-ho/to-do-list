@@ -1,3 +1,12 @@
+:root {
+  --contents-background: #1e1e1e;
+  --sidebar-background: #2d2d2d;
+  --sidebar-hover: #3b3b3b;
+  --main-accent: #5ccc37;
+  --font-color: white;
+  --font-secondary-color: #999999;
+}
+
 *,
 *::before,
 *::after {
@@ -13,10 +22,11 @@ html {
 body {
   box-sizing: border-box;
   font-size: 1.6rem;
-  background-color: #1e1e1e;
+  background-color: var(--contents-background);
   font-family: 'Neue Montreal Book', sans-serif;
-  color: #5ccc37;
+  color: var(--font-color);
   min-height: 100vh;
+  display: flex;
 }
 
 @font-face {
@@ -38,7 +48,7 @@ body {
   margin: 0;
   padding: 10px;
   width: 260px;
-  background-color: #2d2d2d;
+  background-color: var(--sidebar-background);
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -56,11 +66,12 @@ body {
 .sidebar-2 h1 {
   font-size: 1.8rem;
   font-family: 'Neue Montreal Medium';
+  color: var(--main-accent);
 }
 
 .sidebar button,
 .sidebar-top button {
-  background-color: #2d2d2d;
+  background-color: var(--sidebar-background);
   border: none;
   width: 20px;
   height: 20px;
@@ -70,26 +81,51 @@ body {
 .sidebar a {
   display: flex;
   align-items: center;
-  color: white;
+  color: var(--font-color);
   text-decoration: none;
   padding: 10px;
 }
 
-.sidebar a.active {
-  background-color: #235413;
-  color: #5ccc37;
-}
-
-.sidebar a:hover:not(.active) {
-  background-color: #3b3b3b;
+.sidebar a:hover {
+  background-color: var(--sidebar-hover);
 }
 
 .sidebar a svg {
   margin-right: 8px;
 }
 
-div > content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 100vh;
+#content {
+  margin-left: 260px;
+  padding: 16px;
+  flex-grow: 1;
+}
+
+.content-div {
+  padding: 20px;
+}
+
+.content-div h1 {
+  font-family: 'Neue Montreal Medium';
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+#task-button {
+  font-family: 'Neue Montreal Book';
+  font-size: 1.5rem;
+  background-color: var(--contents-background);
+  border: none;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+#task-button-icon {
+  font-weight: 100;
+  margin-right: 10px;
+  color: var(--main-accent);
+}
+
+#task-button-text {
+  color: var(--font-secondary-color);
 }
