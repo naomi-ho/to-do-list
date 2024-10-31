@@ -176,8 +176,7 @@ input {
 .buttons {
   display: flex;
   flex-direction: row;
-  gap: 325px;
-  margin-left: 5px;
+  gap: 330px;
 }
 
 .task-props,
