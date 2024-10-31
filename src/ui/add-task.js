@@ -14,5 +14,5 @@ export default function addTask() {
   taskBtn.appendChild(taskBtnIcon);
   taskBtn.appendChild(taskBtnText);
 
-  document.getElementById('content').appendChild(taskBtn);
+  document.getElementById('content-inner').appendChild(taskBtn);
 }

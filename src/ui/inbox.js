@@ -8,5 +8,5 @@ export default function addInbox() {
 
   inboxDiv.appendChild(inboxTitle);
 
-  document.getElementById('content').appendChild(inboxDiv);
+  document.getElementById('content-inner').appendChild(inboxDiv);
 }
