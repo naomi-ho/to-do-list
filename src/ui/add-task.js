@@ -23,6 +23,10 @@ export function createTask() {
   taskForm.setAttribute('action', '#');
   taskForm.id = 'task-form';
 
+  // details div
+  const detailsDiv = document.createElement('div');
+  detailsDiv.className = 'details';
+
   // task name
   const taskTitle = document.createElement('input');
   taskTitle.setAttribute('type', 'text');
@@ -42,6 +46,19 @@ export function createTask() {
   taskDesc.id = 'task-desc';
 
   const breakTwo = document.createElement('br');
+
+  // append to details div
+  detailsDiv.appendChild(taskTitle);
+  detailsDiv.appendChild(breakOne);
+  detailsDiv.appendChild(taskDesc);
+  detailsDiv.appendChild(breakTwo);
+
+  // buttons div
+  const buttonsDiv = document.createElement('div');
+  buttonsDiv.className = 'buttons';
+
+  const propertyDiv = document.createElement('div');
+  propertyDiv.className = 'properties';
 
   // due date
   const taskDueDate = document.createElement('input');
@@ -92,6 +109,15 @@ export function createTask() {
   // append projects to project select element
   taskProject.appendChild(projectZero);
 
+  // append task-props to properties div
+  propertyDiv.appendChild(taskDueDate);
+  propertyDiv.appendChild(taskPriority);
+  propertyDiv.appendChild(taskProject);
+
+  // form button div
+  const formButtonDiv = document.createElement('div');
+  formButtonDiv.className = 'form-buttons';
+
   // cancel button
   const cancelTask = document.createElement('button');
   cancelTask.textContent = 'Cancel';
@@ -101,17 +127,18 @@ export function createTask() {
   const addTask = document.createElement('button');
   addTask.textContent = 'Add task';
   addTask.className = 'form-button';
+  addTask.id = 'submit-task';
+
+  // append buttons to form button div
+  formButtonDiv.appendChild(cancelTask);
+  formButtonDiv.appendChild(addTask);
+
+  buttonsDiv.appendChild(propertyDiv);
+  buttonsDiv.appendChild(formButtonDiv);
 
   // append elements to form
-  taskForm.appendChild(taskTitle);
-  taskForm.appendChild(breakOne);
-  taskForm.appendChild(taskDesc);
-  taskForm.appendChild(breakTwo);
-  taskForm.appendChild(taskDueDate);
-  taskForm.appendChild(taskPriority);
-  taskForm.appendChild(taskProject);
-  taskForm.appendChild(cancelTask);
-  taskForm.appendChild(addTask);
+  taskForm.appendChild(detailsDiv);
+  taskForm.appendChild(buttonsDiv);
 
   document.getElementById('content-inner').appendChild(taskForm);
 }
