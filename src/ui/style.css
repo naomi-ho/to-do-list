@@ -4,8 +4,10 @@
   --sidebar-hover: #3b3b3b;
   --main-accent: #5ccc37;
   --font-color: white;
-  --font-secondary-color: #999999;
+  --font-secondary-color: #cacaca;
   --editor-width: 800px;
+  --font-book: 'Neue Montreal Book';
+  --font-medium: 'Neue Montreal Medium';
 }
 
 *,
@@ -24,7 +26,7 @@ body {
   box-sizing: border-box;
   font-size: 1.6rem;
   background-color: var(--contents-background);
-  font-family: 'Neue Montreal Book', sans-serif;
+  font-family: var(--font-book), sans-serif;
   color: var(--font-color);
   min-height: 100vh;
   display: flex;
@@ -43,6 +45,10 @@ body {
 @font-face {
   font-family: 'Neue Montreal Thin';
   src: url('../fonts/ppneuemontreal-thin.otf') format('opentype');
+}
+
+input {
+  color-scheme: dark;
 }
 
 .sidebar {
@@ -66,7 +72,7 @@ body {
 .sidebar-top h1,
 .sidebar-2 h1 {
   font-size: 1.8rem;
-  font-family: 'Neue Montreal Medium';
+  font-family: var(--font-medium);
   color: var(--main-accent);
 }
 
@@ -110,14 +116,14 @@ body {
 }
 
 .content-div h1 {
-  font-family: 'Neue Montreal Medium';
+  font-family: var(--font-medium);
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 2.5rem;
 }
 
 #task-button {
-  font-family: 'Neue Montreal Book';
+  font-family: var(--font-book);
   font-size: 1.5rem;
   background-color: var(--contents-background);
   border: none;
@@ -134,4 +140,84 @@ body {
 
 #task-button-text {
   color: var(--font-secondary-color);
+}
+
+#task-form {
+  border: solid;
+  border-radius: 10px;
+  border-color: var(--font-secondary-color);
+  padding: 10px;
+  color: var(--font-secondary-color);
+}
+
+.details {
+  padding-bottom: 8px;
+}
+
+#task-title,
+#task-desc {
+  padding: 5px;
+  width: 778px;
+  border: none;
+  outline: none;
+  background-color: var(--contents-background);
+}
+
+#task-title {
+  font-weight: 800;
+  font-family: var(--font-medium);
+  font-size: 1.5rem;
+}
+
+#task-desc {
+  font-family: var(--font-book);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 325px;
+  margin-left: 5px;
+}
+
+.task-props,
+.form-button {
+  border-radius: 5px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+.properties {
+  display: flex;
+  gap: 10px;
+}
+
+.task-props {
+  padding: 5px;
+  background-color: transparent;
+  border-color: var(--font-secondary-color);
+  font-family: var(--font-book);
+  color: var(--font-secondary-color);
+}
+
+.dropdown-select {
+  appearance: none;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.form-button {
+  padding: 8px 15px;
+  font-family: var(--font-medium);
+  border: none;
+  background-color: var(--sidebar-hover);
+  color: var(--font-secondary-color);
+}
+
+#submit-task {
+  background-color: var(--main-accent);
+  color: var(--font-color);
 }
