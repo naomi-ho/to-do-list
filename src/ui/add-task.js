@@ -1,3 +1,5 @@
+import addTaskService from '../services/add-task-service';
+
 export default function addTask() {
   const taskBtn = document.createElement('button');
   taskBtn.id = 'task-button';
@@ -19,7 +21,7 @@ export default function addTask() {
   addTaskForm();
 }
 
-export function createTask() {
+export function createTaskForm() {
   // create form
   const taskForm = document.createElement('form');
   taskForm.setAttribute('action', '#');
@@ -73,23 +75,27 @@ export function createTask() {
   // task priority
   const taskPriority = document.createElement('select');
   taskPriority.setAttribute('id', 'priority');
+  taskPriority.setAttribute('name', 'priority');
   taskPriority.className = 'task-props';
 
   const priorityZero = document.createElement('option');
-  priorityZero.setAttribute('disabled', 'disabled');
   priorityZero.setAttribute('selected', 'selected');
+  priorityZero.setAttribute('disabled', 'disabled');
   priorityZero.text = 'Priority';
 
   const priorityOne = document.createElement('option');
-  priorityOne.setAttribute('value', 'low');
+  priorityOne.name = 'low';
+  priorityOne.value = 'low';
   priorityOne.text = 'Low';
 
   const priorityTwo = document.createElement('option');
-  priorityTwo.setAttribute('value', 'medium');
+  priorityTwo.name = 'medium';
+  priorityTwo.value = 'medium';
   priorityTwo.text = 'Medium';
 
   const priorityThree = document.createElement('option');
-  priorityThree.setAttribute('value', 'high');
+  priorityThree.name = 'high';
+  priorityThree.value = 'high';
   priorityThree.text = 'High';
 
   // append priority levels to priority select element
@@ -101,10 +107,11 @@ export function createTask() {
   // project
   const taskProject = document.createElement('select');
   taskProject.setAttribute('id', 'project');
+  taskProject.setAttribute('name', 'project');
   taskProject.className = 'task-props';
 
   const projectZero = document.createElement('option');
-  projectZero.setAttribute('value', 'inbox');
+  projectZero.value = 'inbox';
   projectZero.setAttribute('selected', 'selected');
   projectZero.text = 'Inbox';
 
@@ -146,6 +153,7 @@ export function createTask() {
   document.getElementById('content-inner').appendChild(taskForm);
 
   removeTaskForm();
+  createNewTask();
 }
 
 function addTaskForm() {
@@ -153,7 +161,7 @@ function addTaskForm() {
 
   taskBtn.addEventListener('click', (e) => {
     taskBtn.remove();
-    createTask();
+    createTaskForm();
   });
 }
 
@@ -165,5 +173,23 @@ function removeTaskForm() {
     e.preventDefault();
     taskForm.remove();
     addTask();
+  });
+}
+
+function createNewTask() {
+  const addTaskBtn = document.getElementById('submit-task');
+  const taskForm = document.getElementById('task-form');
+
+  addTaskBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const formData = new FormData(taskForm);
+    const taskData = {
+      title: formData.get('title'),
+      description: formData.get('description'),
+      date: formData.get('date'),
+      priority: formData.get('priority'),
+      project: formData.get('project'),
+    };
+    addTaskService(taskData);
   });
 }
