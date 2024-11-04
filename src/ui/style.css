@@ -49,6 +49,7 @@ body {
 
 input {
   color-scheme: dark;
+  border-width: 1px;
 }
 
 .sidebar {
@@ -176,7 +177,7 @@ input {
 .buttons {
   display: flex;
   flex-direction: row;
-  gap: 330px;
+  gap: 307px;
 }
 
 .task-props,
@@ -201,6 +202,14 @@ input {
 
 .dropdown-select {
   appearance: none;
+}
+
+input[type='date'] {
+  width: 128px;
+}
+
+select {
+  width: 80px;
 }
 
 .form-buttons {
