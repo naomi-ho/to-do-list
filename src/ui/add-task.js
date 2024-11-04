@@ -15,6 +15,8 @@ export default function addTask() {
   taskBtn.appendChild(taskBtnText);
 
   document.getElementById('content-inner').appendChild(taskBtn);
+
+  addTaskForm();
 }
 
 export function createTask() {
@@ -122,6 +124,7 @@ export function createTask() {
   const cancelTask = document.createElement('button');
   cancelTask.textContent = 'Cancel';
   cancelTask.className = 'form-button';
+  cancelTask.id = 'cancel';
 
   // submit button
   const addTask = document.createElement('button');
@@ -141,4 +144,26 @@ export function createTask() {
   taskForm.appendChild(buttonsDiv);
 
   document.getElementById('content-inner').appendChild(taskForm);
+
+  removeTaskForm();
+}
+
+function addTaskForm() {
+  const taskBtn = document.getElementById('task-button');
+
+  taskBtn.addEventListener('click', (e) => {
+    taskBtn.remove();
+    createTask();
+  });
+}
+
+function removeTaskForm() {
+  const cancelBtn = document.getElementById('cancel');
+  const taskForm = document.getElementById('task-form');
+
+  cancelBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    taskForm.remove();
+    addTask();
+  });
 }
