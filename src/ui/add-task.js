@@ -1,4 +1,6 @@
 import addTaskService from '../services/add-task-service';
+import { project0 } from '../index';
+import { displayTask } from './display-project';
 
 export default function addTask() {
   const taskBtn = document.createElement('button');
@@ -190,6 +192,17 @@ function createNewTask() {
       priority: formData.get('priority'),
       project: formData.get('project'),
     };
+
     addTaskService(taskData);
+    taskForm.remove();
+
+    if (formData.get('project') === 'inbox') {
+      project0.addTask(taskData);
+
+      displayTask(taskData.title, taskData.date);
+      console.log(project0);
+    }
+
+    addTask();
   });
 }
