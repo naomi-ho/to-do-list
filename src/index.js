@@ -5,5 +5,5 @@ import initialLoad from './ui/initial-load';
 
 initialLoad();
 
-const project1 = new Project(0, 'inbox');
-console.log(project1);
+// create default inbox project
+export const project0 = new Project('inbox');
