@@ -229,3 +229,24 @@ select {
   background-color: var(--main-accent);
   color: var(--font-color);
 }
+
+.created-task {
+  display: flex;
+  gap: 8px;
+  padding: 10px 0px;
+  align-items: center;
+}
+
+.task-inner-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.task-inner-buttons button {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 5px;
+  color: var(--font-secondary-color);
+  border-style: none;
+  cursor: pointer;
+}
